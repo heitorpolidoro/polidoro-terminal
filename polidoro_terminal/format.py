@@ -18,6 +18,7 @@ class CombinedFormat:
     def __sub__(self, other):
         return CombinedFormat(CombinedFormat(self).value.replace(CombinedFormat(other).value, ''))
 
+
 class Format(Enum):
     NORMAL = '\x1b[0m'
     BOLD = '\x1b[1m'
@@ -51,6 +52,3 @@ class Format(Enum):
             if f.value in text:
                 _len += len(f.value)
         return _len
-
-
-
