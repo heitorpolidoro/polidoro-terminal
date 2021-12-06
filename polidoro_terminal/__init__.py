@@ -6,7 +6,7 @@ from polidoro_terminal.format import Format
 from polidoro_terminal.question import question
 
 NAME = 'polidoro_terminal'
-VERSION = '0.0.1'
+VERSION = '0.0.2'
 
 __all__ = ['size', 'columns', 'rows', 'erase_lines', 'up_lines', 'clear_to_end_of_line', 'cursor', 'Color',
            'Format', 'question']
