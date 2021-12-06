@@ -19,6 +19,6 @@ jobs:
         if: github.event_name == 'push' || github.event.pull_request.merged == true
         uses: heitorpolidoro/auto-release@v1
         with:
-          update_released_versions: true
+          version_file: polidoro_terminal/__init__.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
