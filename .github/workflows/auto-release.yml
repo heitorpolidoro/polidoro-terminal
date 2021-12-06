@@ -21,4 +21,4 @@ jobs:
         with:
           version_file: polidoro_terminal/__init__.py
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.HEITORPOLIDORO_PAT }}
