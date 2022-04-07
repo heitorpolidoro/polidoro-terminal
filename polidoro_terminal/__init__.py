@@ -3,10 +3,10 @@ from polidoro_terminal.manipulation import erase_lines, up_lines, clear_to_end_o
 from polidoro_terminal import cursor
 from polidoro_terminal.color import Color
 from polidoro_terminal.format import Format
-from polidoro_terminal.question import question
+from polidoro_terminal.getch import getch, getche
 
 NAME = 'polidoro_terminal'
-VERSION = '0.0.2'
+VERSION = '0.1.0'
 
 __all__ = ['size', 'columns', 'rows', 'erase_lines', 'up_lines', 'clear_to_end_of_line', 'cursor', 'Color',
-           'Format', 'question']
+           'Format', 'getch', 'getche']
