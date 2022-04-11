@@ -4,11 +4,10 @@ import os
 def size():
     env = os.environ
 
-    cr = None
-    try:
+    if 'LINES' in env and 'COLUMNS' in env:
         cr = env['LINES'], env['COLUMNS']
-    except Exception:
-        pass
+    else:
+        cr = None
 
     # noinspection PyShadowingNames,PyBroadException,SpellCheckingInspection
     def ioctl_gwinsz(fd):
@@ -25,14 +24,13 @@ def size():
     if not cr:
         cr = ioctl_gwinsz(0) or ioctl_gwinsz(1) or ioctl_gwinsz(2)
     if not cr:
+        # noinspection PyBroadException
         try:
             fd = os.open(os.ctermid(), os.O_RDONLY)
             cr = ioctl_gwinsz(fd)
             os.close(fd)
         except Exception:
-            pass
-    if not cr:
-        cr = (env.get('LINES', 25), env.get('COLUMNS', 80))
+            cr = (env.get('LINES', 25), env.get('COLUMNS', 80))
 
     return int(cr[1]), int(cr[0])
 

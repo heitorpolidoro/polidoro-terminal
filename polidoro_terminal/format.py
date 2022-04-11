@@ -49,6 +49,5 @@ class Format(Enum):
         from polidoro_terminal import Color
         _len = 0
         for f in chain(Format, Color):
-            if f.value in text:
-                _len += len(f.value)
+            _len += len(f.value) * text.count(f.value)
         return _len
